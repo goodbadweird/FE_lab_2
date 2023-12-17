@@ -60,7 +60,7 @@ $(function() {
         let depositTypeStr = depositType == 1 ? 'Пополняемый' : 'Срочный';
         let depositTimeObj = depositTimesByType[depositType - 1][depositTime];
         let depositTimeStr = depositTimeObj.title;
-        let resultFirstStr = `Вклад "${depositTypeStr}" на срок "${depositTimeStr}" на сумму ${depositAmount} руб`;
+        let resultFirstStr = `Вклад "${depositTypeStr}" на срок ${depositTimeStr} на сумму ${depositAmount} руб`;
         $('#results').empty().append($('<p>').text(resultFirstStr));
 
         let resultAmount = Math.round(depositAmount * (1 + depositTimeObj.rate * depositTimeObj.yearPart / 100));
