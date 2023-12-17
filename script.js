@@ -45,7 +45,7 @@ $(function() {
             return;
         }
         if (depositTime == null) {
-            $('#results').empty().append($('<p>').text('Вы не выбрали срок вклада'));
+            $('#results').empty().append($('<p style="margin-top: 40px;">').text('Вы не выбрали срок вклада'));
             return;
         }
         if (isNaN(depositAmount)) {
@@ -61,7 +61,7 @@ $(function() {
         let depositTimeObj = depositTimesByType[depositType - 1][depositTime];
         let depositTimeStr = depositTimeObj.title;
         let resultFirstStr = `Вклад "${depositTypeStr}" на срок ${depositTimeStr} на сумму ${depositAmount} руб`;
-        $('#results').empty().append($('<p>').text(resultFirstStr));
+        $('#results').empty().append($('<p style="margin-top: 40px;">').text(resultFirstStr));
 
         let resultAmount = Math.round(depositAmount * (1 + depositTimeObj.rate * depositTimeObj.yearPart / 100));
         let resultSecondStr = `В конце срока вы получите ${resultAmount} руб.`;
